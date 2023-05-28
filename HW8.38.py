@@ -1,10 +1,12 @@
+
+# Показывает информацию в файле - опция 1
 def show_data(filename):
     print("\nПП | ФИО | Телефон")
     with open(filename, "r", encoding="utf-8") as data:
         print(data.read())
     print("")
 
-# Записывает информацию в файл
+# Записывает информацию в файл - опция 2
 def export_data(filename):
     with open(filename, "r", encoding="utf-8") as data:
         tel_file = data.read()
@@ -15,7 +17,7 @@ def export_data(filename):
         data.write(f"{num} | {fio} | {phone_number}\n")
         print(f"Добавлена запись : {num} | {fio} | {phone_number}\n")
 
-# Изменяет информацию из файла
+# Изменяет информацию из файла - опция 3
 def edit_data(filename):
     print("\nПП | ФИО | Телефон")
     with open(filename, "r", encoding='utf-8') as data:
@@ -39,7 +41,7 @@ def edit_data(filename):
     with open(filename, "w", encoding='utf-8') as f:
         f.write("\n".join(tel_book_lines))
 
-# Удаляет информацию из файла
+# Удаляет информацию из файла - опция 4
 def delete_data(filename):
     print("\nПП | ФИО | Телефон")
     with open(filename, "r", encoding="utf-8") as data:
@@ -58,10 +60,11 @@ def main():
     my_choice = -1
     file_tel = "tel.txt"
 
-    # Создает файл если его нет в папке
+# Создает файл если его нет в папке 
     with open(file_tel, "a", encoding="utf-8") as file:
          file.write("")
 
+# навигационное меню и опция 0
     while my_choice != 0:
         print("Выберите одно из действий:")
         print("1 - Вывести инфо на экран")
@@ -81,7 +84,7 @@ def main():
         else:
             my_choice = 0
 
-    print("До свидания")
+    print("Всего доброго!")
 
 if __name__ == "__main__":
     main()
